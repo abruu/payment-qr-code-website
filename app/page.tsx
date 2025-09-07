@@ -53,7 +53,7 @@ export default function PaymentRequest() {
             >
               Pay Now
             </Button>
-            <small>V 1.1</small>
+            <small>V 1.11</small>
           </CardContent>
         </Card>
       </div>
