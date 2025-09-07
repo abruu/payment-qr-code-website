@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -5,6 +7,12 @@ export default function PaymentRequest() {
   const payeeName = process.env.NEXT_PUBLIC_PAYEE_NAME || "Abrin C Saiju"
   const upiId = process.env.NEXT_PUBLIC_UPI_ID || "abrin1999-3@okicici"
   const qrCodeImage = process.env.NEXT_PUBLIC_QR_CODE_IMAGE || "/upi-payment-qr-code-with-black-squares-pattern.jpg"
+  const paymentLink =
+    process.env.NEXT_PUBLIC_PAYMENT_LINK || `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}`
+
+  const handlePayment = () => {
+    window.open(paymentLink, "_blank")
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
@@ -39,6 +47,7 @@ export default function PaymentRequest() {
 
             {/* Pay Button */}
             <Button
+              onClick={handlePayment}
               className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02]"
               size="lg"
             >
