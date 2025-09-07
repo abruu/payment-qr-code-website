@@ -104,7 +104,7 @@ export default function PaymentRequest() {
 
             {/* Pay Button */}
             <div className="flex justify-center ">
-  <a target="_blank"
+  <a 
     href={paymentLink}
     className="inline-block rounded-2xl bg-blue-600 px-6 py-3 text-white font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200 ease-in-out"
   >
