@@ -45,12 +45,9 @@ export default function PaymentRequest() {
       <div className="w-full max-w-xs mx-auto">
         {/* Payment Request Card */}
         <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden">
-          <CardContent className="p-8 text-center space-y-8">
+          <CardContent className="p-2 text-center space-y-8">
             {/* Header with Status */}
             <div className="space-y-3">
-              <div className="flex items-center justify-center">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              </div>
               <h1 className="text-xl font-bold text-gray-900 text-balance leading-tight">
                 {payeeName} is Requesting Payment
               </h1>
