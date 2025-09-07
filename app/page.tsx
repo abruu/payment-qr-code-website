@@ -103,13 +103,16 @@ export default function PaymentRequest() {
             </div>
 
             {/* Pay Button */}
-            <Button
-              onClick={handlePayment}
-              className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02]"
-              size="lg"
-            >
-              Pay Now
-            </Button>
+            <div className="flex justify-center ">
+  <a target="_blank"
+    href={paymentLink}
+    className="inline-block rounded-2xl bg-blue-600 px-6 py-3 text-white font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200 ease-in-out"
+  >
+    💳 Pay Now
+  </a>
+</div>
+
+
             <small>V 1.1</small>
           </CardContent>
         </Card>
