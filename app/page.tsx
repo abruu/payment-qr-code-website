@@ -2,6 +2,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 export default function PaymentRequest() {
+  const payeeName = process.env.NEXT_PUBLIC_PAYEE_NAME || "Abrin C Saiju"
+  const upiId = process.env.NEXT_PUBLIC_UPI_ID || "abrin1999-3@okicici"
+  const qrCodeImage = process.env.NEXT_PUBLIC_QR_CODE_IMAGE || "/upi-payment-qr-code-with-black-squares-pattern.jpg"
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-xs mx-auto">
@@ -14,11 +18,11 @@ export default function PaymentRequest() {
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               </div>
               <h1 className="text-xl font-bold text-gray-900 text-balance leading-tight">
-                Abrin C Saiju is Requesting Payment
+                {payeeName} is Requesting Payment
               </h1>
               <div className="bg-gray-50 rounded-xl p-4">
                 <p className="text-sm text-gray-500 mb-1">UPI ID</p>
-                <p className="font-mono text-base font-semibold text-gray-900 break-all">abrin1999-3@okicici</p>
+                <p className="font-mono text-base font-semibold text-gray-900 break-all">{upiId}</p>
               </div>
             </div>
 
@@ -26,7 +30,7 @@ export default function PaymentRequest() {
             <div className="flex justify-center">
               <div className="w-56 h-56 bg-white border border-gray-100 rounded-2xl p-4 shadow-inner">
                 <img
-                  src="/upi-payment-qr-code-with-black-squares-pattern.jpg"
+                  src={qrCodeImage || "/placeholder.svg"}
                   alt="Payment QR Code"
                   className="w-full h-full object-contain"
                 />
